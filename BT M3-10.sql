@@ -10,9 +10,9 @@ set classid = 2
 where studentname = 'Hung';
 
 select s.studentname, sub.subname, m.mark
-from mark m join student s on s.studentid = m.studentid
-    join subject sub on sub.subid = m.subid
-order by m.mark desc;
+from ((mark m join student s on s.studentid = m.studentid)
+    join subject sub on sub.subid = m.subid)
+order by m.mark desc, s.studentname asc;
 
 
 
