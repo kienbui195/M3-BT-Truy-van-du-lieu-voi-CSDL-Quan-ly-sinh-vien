@@ -68,9 +68,11 @@ from customer c
     left join orders o on c.cid = o.cid
 where o.cid IS NULL;
 
-select o.oid, o.odate, o.ototalprice
-    from orders o
+select o.oid, o.odate, o2.odqty*p.pprice as Price
+from orders o
 join orderdetail o2 on o.oid = o2.oid
+join product p on o2.pid = p.pid;
+
 
 
 
