@@ -70,4 +70,4 @@ begin
 end //
 DELIMITER ;
 
-call deleteProduct(3);
+call deleteProduct(6);
